@@ -29,7 +29,7 @@ function toHexString(byteArray) {
 
 function update_status() {
     var address = document.getElementById("address").value;
-    var res = segwit_addr_ecc.check(address, ["bc", "tb"]);
+    var res = segwit_addr_ecc.check(address, ["grs", "tgrs"]);
     var cp = "";
     if (res.error === null) {
         document.getElementById("result").innerHTML = "<a style=\"color:green\">Ok, witness version " + res.version + ", program " + toHexString(res.program) + "</a>";
@@ -90,9 +90,9 @@ function load_addr(addr) {
                     <p><span id="copy" class="monospace"><br/></span></p>
                     Fill field with:
                     <ul>
-                    <li> <a class="demo_link" href='javascript:load_addr("bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4");'>P2WPKH example</a>
-                    <li> <a class="demo_link" href='javascript:load_addr("BC1QW508D6QEJXTDG4Y5R3ZARVAYR0C5XW7KV8F3T4");'>P2WPKH example with errors</a>
-                    <li> <a class="demo_link" href='javascript:load_addr("bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3");'>P2WSH example</a>
+                    <li> <a class="demo_link" href='javascript:load_addr("grs1qus9swt9x3rkju5hdwnuxnav053ttz2f3wqu2gz");'>P2WPKH example</a>
+                    <li> <a class="demo_link" href='javascript:load_addr("GRS1QUS9SWT9X3RKJU5HDWNUXNAV503TTZ2F3WQU2GZ");'>P2WPKH example with errors</a>
+                    <li> <a class="demo_link" href='javascript:load_addr("grs1qatwrmcqz3qkmy7ukpdm4mhslcrc2y73ftne4ug2jqefalaqd026s055wfk");'>P2WSH example</a>
                     </ul>
                 </div>
             </div>
@@ -106,4 +106,3 @@ function load_addr(addr) {
     <script src="demo.js"></script>
     </body>
 </html>
-

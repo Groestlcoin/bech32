@@ -52,13 +52,13 @@ function convertbits (data, frombits, tobits, pad) {
 }
 
 function check (addr, validHrp) {
-  if (addr.length < 14) {
+  if (addr.length < 16) {
     return {error:"Too short", pos:null};
   }
-  if (addr.length > 74) {
+  if (addr.length > 76) {
     return {error:"Too long", pos:null};
   }
-  if ((addr.length % 8) == 0 || (addr.length % 8) == 3 || (addr.length % 8) == 5) {
+  if ((addr.length % 8) == 2 || (addr.length % 8) == 6 || (addr.length % 8) == 8) {
     return {error:"Invalid length", pos:null};
   }
   var dec = bech32_ecc.check(addr, validHrp);
